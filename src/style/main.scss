@@ -1,0 +1,505 @@
+
+
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.todo_list{
+        height:100vh;
+        width:100%;
+        position: relative;
+
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: row;
+        // overflow: hidden;
+
+    .side_bar{
+        position: relative;
+        padding:20px;
+        height:100%;
+        width:70px;
+        border-radius: 0px 20px 20px 0px;
+        box-shadow: 4px 0px 19px -2px rgba(0, 0, 0, 0.808);
+        z-index: 9999999999;
+        border: 1px solid rgba(248, 248, 255, 0.096);
+
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-flow: column;
+
+
+        .top_side{
+
+            .icon{
+                margin-bottom: 30px;
+            }
+
+            .btn{
+                margin-bottom:15px;
+            }
+        }
+
+        .bottom_side{
+            .btn{
+                margin-bottom:15px;
+            }
+        }
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+    .side_pannel{
+        position: relative;
+        width:220px;
+        // border-radius: 0px 20px 20px 0px;
+        border-right: 1px solid rgba(248, 248, 255, 0.096);
+        box-shadow: 9px 2px 18px -10px rgba(0,0,0,0.51);
+        height:100%;
+        padding-left:10px;
+        z-index: 9999999;
+
+        display: flex;
+        flex-direction: column;
+        
+        .heade_side{
+            padding:10px;
+            font-weight: 700;
+        }
+
+        .member_adder{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: row;
+
+            .add_icon{
+                margin-right:20px;
+                cursor: pointer;
+            }
+        }
+
+        .project_btn{
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: column;
+            width: 100%;
+            flex: 1;
+           
+            .bts{
+                width:100%;
+                flex: 1;
+                border-radius: 8px;
+                height:10px;
+                padding:10px 8px;
+                margin-bottom:5px;
+                cursor: pointer;
+            }
+
+            .ico{
+                position: relative;
+                width:100%;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: row;
+
+                .bst_title{
+                    flex: 1;
+                    margin-left:10px;
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+        .members_act{
+            position: relative;
+            width:100%;
+            // border: 1px solid ghostwhite;
+            flex: 1;
+            overflow: auto;
+
+            display: flex;
+            align-items: center;
+            flex-flow: column;
+
+           /* width */
+           &::-webkit-scrollbar {
+             width: 3px;
+           }
+           
+           /* Track */
+           &::-webkit-scrollbar-track {
+             background: transparent;
+           }
+           
+           /* Handle */
+           &::-webkit-scrollbar-thumb {
+             background: #888;
+           }
+           
+           /* Handle on hover */
+           &::-webkit-scrollbar-thumb:hover {
+             background: #555;
+           }
+
+            .bts{
+                width:100%;
+                border-radius: 8px;
+                padding:10px 8px;
+                margin-bottom:5px;
+                cursor: pointer;
+
+                .mem{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    flex-flow: row;
+
+                    .infos{
+                        flex:1;
+                        width:100%;
+                        text-align: left;
+                        padding-left:10px;
+                        line-height:15px;
+                    }
+                }
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .content_view{
+        flex: 1;
+        height:100vh;
+        width:100%;
+        position: relative;
+        // border: 1px solid rgba(255, 0, 0, 0.26);
+        display: block;
+        overflow: auto;
+
+        display: flex;
+        flex-direction: column;
+
+
+        /* width */
+        &::-webkit-scrollbar {
+        width: 8px;
+        height:0;
+        }
+        
+        /* Track */
+        &::-webkit-scrollbar-track {
+        background: transparent;
+        }
+        
+        /* Handle */
+        &::-webkit-scrollbar-thumb {
+        background: #888;
+        }
+        
+        /* Handle on hover */
+        &::-webkit-scrollbar-thumb:hover {
+        background: #555;
+        }
+
+        .nav{
+            position: relative;
+            padding:20px;
+            width:100%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: row;
+
+            .left{
+                .rev{
+                    margin-right:10px;
+                }
+            }
+
+            .right{
+                .btn{
+                    margin-right: 8px;
+                    &:last-child{
+                        margin-right: 0px;
+                    }
+                }
+            }
+        }
+
+        .content{
+            position: relative;
+            width:100%;
+            flex: 1;
+            // background-color: ghostwhite;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-flow: column;
+            
+
+
+            .content_nav{
+                width: 100%;
+                padding:5px;
+                border-bottom: 1px solid rgba(248, 248, 255, 0.096);
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-flow: row;
+                padding:8px 15px;
+
+                .left_side_nave{
+                    flex: 1;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    flex-flow: row;
+                    // border: 1px solid red;
+
+                    .icon_search{
+                        cursor: pointer;
+                    }
+
+                    .search_{
+                        background-color: transparent;
+                        outline:0;
+                        border: none;
+                        margin-left:5px;
+                    }
+                }
+
+
+                .right_side_nave{
+                    flex: 1;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-end;
+                    align-items: center;
+                    flex-flow: row;
+
+                    .nav_btn{
+                        border-right: 1px solid rgba(248, 248, 255, 0.096);
+                        padding:3px 10px;
+                        cursor: pointer;
+
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-flow: row;
+
+                        .btn_name{
+                            margin-left:10px;
+                        }
+                    }
+                }
+
+            }
+
+            
+            .todo_list_display{
+                // padding:20px;
+                flex: 1;
+
+                padding:5px;
+                display: flex;
+                // justify-content: center;
+                align-items: center;
+                flex-flow: row;
+
+                width: 100%;
+                overflow: auto;
+                -webkit-user-select: none; /* Safari */
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* Internet Explorer/Edge */
+                user-select: none; /* Standard syntax */
+                
+
+               /* width */
+               &::-webkit-scrollbar {
+                 width: 8px;
+                 height:5px;
+               }
+               
+               /* Track */
+               &::-webkit-scrollbar-track {
+                 background: transparent;
+               }
+               
+               /* Handle */
+               &::-webkit-scrollbar-thumb {
+                 background: #888;
+               }
+               
+               /* Handle on hover */
+               &::-webkit-scrollbar-thumb:hover {
+                 background: #555;
+               }
+
+
+                .todo_divider{
+                    flex: 1;
+                    border-top:none;
+                    border-bottom:none;
+
+                    height:100%;
+                    width:100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-flow: column;
+
+                    .content_holder{
+                        // border: 1px solid red;
+                        padding: 15px 10px;
+                        // white-space: nowrap;
+                        font-weight: 700;
+                        overflow: hidden;
+                        width:100%;
+
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        flex-flow: row;
+
+                        .n{
+                            opacity: .7;
+                        }
+                    }
+
+                    .tags_container{
+                        position: relative;
+                        height:100%;
+                        width:325px;
+                        // border: 1px solid violet;
+                        flex: 1;
+                        padding:8;
+
+                        display: flex;
+                        align-items: center;
+                        flex-flow: column;
+
+                        border-left: 1px dashed rgba(255, 255, 255, 0.048);
+                        border-right: 1px dashed rgba(255, 255, 255, 0.048);
+
+                        .tags{
+                            position: relative;
+                            padding:20px;
+                            margin:5px;
+                            width:280px;
+                            border-radius: 10px;
+                            // border: 1px salmon solid;
+
+                            .badges_area{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-flow: row;
+                            }
+
+                            .msg{
+                                margin-top:15px;
+                                .msg_head{
+                                    font-weight: 700;
+                                }
+                                .msg_area{
+                                    text-align: justify;
+                                    font-size: smaller;
+                                }
+                            }
+
+
+                            .badges_area_date{
+                                margin-top:15px;
+                                margin-bottom:15px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-flow: row;
+                            }
+
+                            .user_com{
+                                margin-top:15px;
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-flow: row;  
+
+                                .commens{
+                                    display: flex;
+                                    justify-content: space-between;
+                                    align-items: center;
+                                    flex-flow: row;  
+                                    
+                                    .btn{
+                                        margin-left:5px;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+                /*
+                    !ToDo
+                    *In Progress
+                    Under Review
+                    Done
+                */ 
+
+        }
+    }
+}
+}
+
+
+
+
+
+@media(max-width:846px){
+    
+}
