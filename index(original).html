@@ -1,0 +1,1204 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="src/lib/jquery/jquery.js"></script>
+    <script src="src/lib/jquery/jui.js"></script>
+    <script src="src/lib/jquery/jq_ui_youch_punch.js"></script>
+
+
+
+
+    <title>todo_more</title>
+    <link rel="stylesheet" href="src/lib/ui/style/gzmnui.css">
+    <script src="src/lib/ui/script/gzmnui.js"></script>
+    <link rel="stylesheet" href="src/style/main.css">
+
+    <script>
+
+        const users_name = [
+        "Elijah Richards",
+        "Lena Strickland","Connor Sanders","Robert Burgess","Esther Moss","Ada Logan","Andre Walsh","Vera Stewart ","Sean Bush","Agnes Guzman","Genevieve Jenkins","Theresa Waters","Myrtie Wilkins","Dean Flowers","Charlie Jefferson","Sam Williamson","Curtis Norris","Gertrude Flowers","Oscar Reyes","Edith McCarthy","Adele Cole","Sam Lawson","Georgia Mann","Daisy Strickland","Ivan Santos","Alberta McDaniel","Cecilia Schneider","Stephen Quinn","Fanny Garcia","Lou Peters","Tyler Collier","Milton McGee","Sophie Rose"      
+        ];
+
+    
+        let data = {
+            randomItem:"",
+            image:"https://source.unsplash.com/50x50/?portrait"
+        }
+        
+
+
+
+
+
+        $( function() {
+
+
+            $(".add_icon").click(function(){
+            data.randomItem = users_name[Math.floor(Math.random() * users_name.length)];
+            num = $(".mem").length
+
+            $(".members_act").prepend(`
+            <div class="bts btn-neutral rounded-box hover:bg-primary-focus">
+                <div class="mem">
+                        <div class="eve">
+                            <div class="avatar online">
+                                <div class="w-11 rounded-full">
+                                  <img src="${data.image}?${num}" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infos">
+                            <b><p>${data.randomItem }</p></b>
+                            <small>09:08:23 For this week</small>
+                        </div>
+                </div>
+            </div>
+            `)
+
+        });
+
+
+
+
+          $( ".project_btn" ).sortable({
+            axis:"y",
+          });
+
+          $( ".tags_container" ).sortable({
+            connectWith: ".tags_container"
+          });
+          $( "#a, #b, #c. #d" ).disableSelection();
+
+        } );
+    </script>
+
+
+</head>
+<body class="bg-base-200">
+    
+
+<div class="todo_list">
+    <div class="side_bar bg-base-300">
+ 
+        <div class="top_side">   
+
+
+            <div class="icon">
+                <div class="avatar">
+                    <div class="w-15 mask mask-squircle">
+                      <img src="src/img/icons.png" />
+                    </div>
+                  </div>
+            </div>
+
+            
+
+            <button class="btn btn-neutral btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+                    <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L8 2.207l6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                    <path d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6Z"/>
+                  </svg>
+            </button>
+
+            <button class="btn btn-neutral btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-square-dots-fill" viewBox="0 0 16 16">
+                    <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm5 4a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                  </svg>
+            </button>
+
+            <button class="btn btn-neutral btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-columns-gap" viewBox="0 0 16 16">
+                    <path d="M6 1v3H1V1h5zM1 0a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1H1zm14 12v3h-5v-3h5zm-5-1a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-5zM6 8v7H1V8h5zM1 7a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H1zm14-6v7h-5V1h5zm-5-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h5a1 1 0 0 0 1-1V1a1 1 0 0 0-1-1h-5z"/>
+                  </svg>
+            </button>
+
+            <button class="btn btn-neutral btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z"/>
+                  </svg>
+            </button>
+
+            <button class="btn btn-neutral btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-graph-up-arrow" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M0 0h1v15h15v1H0V0Zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5Z"/>
+                  </svg>
+            </button>
+
+            <button class="btn btn-neutral btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-map" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M15.817.113A.5.5 0 0 1 16 .5v14a.5.5 0 0 1-.402.49l-5 1a.502.502 0 0 1-.196 0L5.5 15.01l-4.902.98A.5.5 0 0 1 0 15.5v-14a.5.5 0 0 1 .402-.49l5-1a.5.5 0 0 1 .196 0L10.5.99l4.902-.98a.5.5 0 0 1 .415.103zM10 1.91l-4-.8v12.98l4 .8V1.91zm1 12.98 4-.8V1.11l-4 .8v12.98zm-6-.8V1.11l-4 .8v12.98l4-.8z"/>
+                  </svg>
+            </button>
+
+            <button class="btn btn-neutral btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stopwatch" viewBox="0 0 16 16">
+                    <path d="M8.5 5.6a.5.5 0 1 0-1 0v2.9h-3a.5.5 0 0 0 0 1H8a.5.5 0 0 0 .5-.5V5.6z"/>
+                    <path d="M6.5 1A.5.5 0 0 1 7 .5h2a.5.5 0 0 1 0 1v.57c1.36.196 2.594.78 3.584 1.64a.715.715 0 0 1 .012-.013l.354-.354-.354-.353a.5.5 0 0 1 .707-.708l1.414 1.415a.5.5 0 1 1-.707.707l-.353-.354-.354.354a.512.512 0 0 1-.013.012A7 7 0 1 1 7 2.071V1.5a.5.5 0 0 1-.5-.5zM8 3a6 6 0 1 0 .001 12A6 6 0 0 0 8 3z"/>
+                  </svg>
+            </button>
+        </div>
+
+
+
+
+        <div class="bottom_side">  
+
+            <button class="btn btn-neutral btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+                    <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z"/>
+                  </svg>
+            </button>
+            
+            <button class="btn btn-neutral btn-sm">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill" viewBox="0 0 16 16">
+                    <path d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z"/>
+                  </svg>
+            </button>
+        
+            <div class="avatar">
+                <div class="w-10 mask mask-squircle">
+                    <img src="https://mir-s3-cdn-cf.behance.net/user/230/1387de244463177.64e6bd075a613.png" />
+                </div>
+            </div>
+        
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="side_pannel bg-base-200">
+        <div class="heade_side text-2xl"> Projects</div>
+
+        <div class="menu menu-sm bg-base-200 w-56 project_btn rounded-box">
+
+            <div class="bts btn-neutral rounded-box hover:bg-primary-focus">
+                <div class="ico">
+                    <div class="bts_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-flag-fill" viewBox="0 0 16 16">
+                            <path d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001"/>
+                          </svg>
+                    </div>
+
+                    <div class="bst_title">Campaigns</div>
+
+                    <div class="icon_dots">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bts btn-neutral rounded-box hover:bg-primary-focus">
+                <div class="ico">
+                    <div class="bts_icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stack" viewBox="0 0 16 16">
+                            <path d="m14.12 10.163 1.715.858c.22.11.22.424 0 .534L8.267 15.34a.598.598 0 0 1-.534 0L.165 11.555a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.66zM7.733.063a.598.598 0 0 1 .534 0l7.568 3.784a.3.3 0 0 1 0 .535L8.267 8.165a.598.598 0 0 1-.534 0L.165 4.382a.299.299 0 0 1 0-.535L7.733.063z"/>
+                            <path d="m14.12 6.576 1.715.858c.22.11.22.424 0 .534l-7.568 3.784a.598.598 0 0 1-.534 0L.165 7.968a.299.299 0 0 1 0-.534l1.716-.858 5.317 2.659c.505.252 1.1.252 1.604 0l5.317-2.659z"/>
+                          </svg>
+                    </div>
+                    <div class="bst_title">Publications</div>
+                    <div class="icon_dots">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                            <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="bts btn-neutral rounded-box hover:bg-primary-focus">
+                <div class="ico">
+                <div class="bts_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmarks-fill" viewBox="0 0 16 16">
+                        <path d="M2 4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L7 13.101l-4.223 2.815A.5.5 0 0 1 2 15.5V4z"/>
+                        <path d="M4.268 1A2 2 0 0 1 6 0h6a2 2 0 0 1 2 2v11.5a.5.5 0 0 1-.777.416L13 13.768V2a1 1 0 0 0-1-1H4.268z"/>
+                      </svg>
+                </div>
+                <div class="bst_title">Topics</div>
+                <div class="icon_dots">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                    </svg>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="bts btn-neutral rounded-box hover:bg-primary-focus">
+                <div class="ico">
+                <div class="bts_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-week" viewBox="0 0 16 16">
+                    <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                    <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4zM11 7.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1z"/>
+                    </svg>
+                </div>
+                <div class="bst_title">Planning</div>
+                <div class="icon_dots">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                    </svg>
+                </div>
+                </div>
+            </div>
+
+
+            <div class="bts btn-neutral rounded-box hover:bg-primary-focus">
+                <div class="ico">
+                <div class="bts_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-palette2" viewBox="0 0 16 16">
+                    <path d="M0 .5A.5.5 0 0 1 .5 0h5a.5.5 0 0 1 .5.5v5.277l4.147-4.131a.5.5 0 0 1 .707 0l3.535 3.536a.5.5 0 0 1 0 .708L10.261 10H15.5a.5.5 0 0 1 .5.5v5a.5.5 0 0 1-.5.5H3a2.99 2.99 0 0 1-2.121-.879A2.99 2.99 0 0 1 0 13.044m6-.21 7.328-7.3-2.829-2.828L6 7.188v5.647zM4.5 13a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0zM15 15v-4H9.258l-4.015 4H15zM0 .5v12.495V.5z"/>
+                    <path d="M0 12.995V13a3.07 3.07 0 0 0 0-.005z"/>
+                    </svg>
+                </div>
+                <div class="bst_title">Designs Internal</div>
+                <div class="icon_dots">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                    </svg>
+                </div>
+                </div>
+            </div>
+
+
+
+            <div class="bts btn-neutral rounded-box hover:bg-primary-focus">
+                <div class="ico">
+            <div class="bts_icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-basket" viewBox="0 0 16 16">
+                    <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z"/>
+                    </svg>
+                </div>
+                <div class="bst_title">Marketing</div>
+                <div class="icon_dots">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots" viewBox="0 0 16 16">
+                        <path d="M3 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm5 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z"/>
+                    </svg>
+                </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+        
+        
+
+        <div class="heade_side member_adder text-2xl">
+            <div class="memside_title">
+                Members 
+            </div>
+            <button class="add_icon hover:text-primary-focus">
+                <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                    <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+                </svg>
+            </button>
+        </div>
+
+
+        <div class="members_act menu menu-sm bg-base-200 w-56 rounded-box">
+
+            <div class="bts  btn-neutral rounded-box hover:bg-primary-focus">
+                <div class="mem">
+                        <div class="eve">
+                            <div class="avatar online">
+                                <div class="w-11 rounded-full">
+                                  <img src="https://mir-s3-cdn-cf.behance.net/user/230/1387de244463177.64e6bd075a613.png" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="infos">
+                            <p>Harold Guzman</p>
+                            <small>09:08:23 For this week</small>
+                        </div>
+                </div>
+            </div>
+         
+            
+        </div>
+
+    </div>
+
+
+
+
+
+ 
+    <div class="content_view">
+
+        <div class="nav bg-base-200">
+            <div class="left">
+                <div class="text-2xl"> Todo List</div>
+
+
+                <div class="rev">
+                    
+                </div>
+
+            </div>
+
+
+            <div class="right">
+
+                <button class="btn btn-outline btn-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cloud-download-fill" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 0a5.53 5.53 0 0 0-3.594 1.342c-.766.66-1.321 1.52-1.464 2.383C1.266 4.095 0 5.555 0 7.318 0 9.366 1.708 11 3.781 11H7.5V5.5a.5.5 0 0 1 1 0V11h4.188C14.502 11 16 9.57 16 7.773c0-1.636-1.242-2.969-2.834-3.194C12.923 1.999 10.69 0 8 0zm-.354 15.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 14.293V11h-1v3.293l-2.146-2.147a.5.5 0 0 0-.708.708l3 3z"/>
+                      </svg>
+                    Automate</button>
+
+
+                <button class="btn btn-outline btn-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                        <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                      </svg>
+                    Share</button>
+
+            </div>
+        </div>
+
+
+
+        <div class="content bg-base-100">
+            <div class="content_nav">
+                <div class="left_side_nave">
+                    <div class="icon_search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                          </svg>
+                    </div>
+                    <input type="text" class="search_" placeholder="Search">
+                    <div class="dot_divider">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                            <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                          </svg>
+                    </div>
+                </div>
+                <div class="right_side_nave">
+
+                    <div class="nav_btn hover:text-accent-content">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-filter" viewBox="0 0 16 16">
+                            <path d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"/>
+                          </svg>
+
+                          <div class="btn_name">
+                            Soft
+                          </div>
+                    </div>
+
+                    <div class="nav_btn hover:text-accent-content">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-funnel" viewBox="0 0 16 16">
+                            <path d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"/>
+                          </svg>
+
+                          <div class="btn_name">
+                            Filters
+                          </div>
+                    </div>
+
+                    <div class="nav_btn hover:text-accent-content">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"/>
+                          </svg>
+
+                          <div class="btn_name">
+                            Me
+                          </div>
+                    </div>
+
+                    <div class="nav_btn hover:text-accent-content">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-eye-fill" viewBox="0 0 16 16">
+                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                          </svg>
+
+                          <div class="btn_name">
+                            Show
+                          </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="todo_list_display" id="scroll-container"> 
+
+                <div class="todo_divider">
+                    <div class="content_holder text-2xl">
+                        <div class="n">
+                            To Do
+                        </div>
+                        <div class="light text-blue-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                              </svg>
+                        </div>
+                    </div>
+                    <div class="tags_container"  id="a">
+
+
+                        <!--====================[START] NOTE TAGS [START]====================-->
+                        <div class="tags bg-base-300">
+
+                            <div class="badges_area">
+                                <div class="badges">
+                                    <div class="badge badge-neutral">React</div>
+                                    <div class="badge badge-neutral">JQuery</div>
+                                    <div class="badge badge-primary">Next.js</div>
+                            </div>
+
+                                <div class="settings_tag">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                      </svg>
+                                </div>
+                            </div>
+
+
+                            <div class="msg">
+                                <div class="msg_head">
+                                    Leroy Robbins
+                                </div>
+                                <div class="msg_area">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus assumenda voluptate aliquam!
+                                </div>
+                            </div>
+
+
+
+                            <div class="badges_area_date">
+                                <button class="btn btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                                      </svg>  <small>09/06/23 | 8:28 AM</small>
+                                </button>
+                            </div>
+
+                            <hr>
+                            
+                            <div class="user_com">
+                                <div class="users">
+                                    <div class="avatar-group -space-x-6">
+                                        <div class="avatar">
+                                          <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?1" />
+                                          </div>
+                                        </div>
+                                        <div class="avatar">
+                                          <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?2" />
+                                          </div>
+                                        </div>
+                                        <div class="avatar">
+                                          <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?3" />
+                                          </div>
+                                        </div>
+                                        <div class="avatar">
+                                          <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?4" />
+                                          </div>
+                                        </div>
+                                      </div>
+                                </div>
+
+                                <div class="commens">
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                          </svg> 6
+                                    </button>
+
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                            <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                                          </svg> 3
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--====================[ END ] NOTE TAGS [ END ]====================-->
+
+
+                        <!--====================[START] NOTE TAGS [START]====================-->
+                        <div class="tags bg-base-300">
+
+                            <div class="badges_area">
+                                <div class="badges">
+                                    <div class="badge badge-neutral">UI</div>
+                                    <div class="badge badge-secondary">UX</div>
+                                    <div class="badge badge-primary">U & I</div>
+                            </div>
+
+                                <div class="settings_tag">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                        </svg>
+                                </div>
+                            </div>
+
+
+                            <div class="msg">
+                                <div class="msg_head">
+                                    Helen Blair
+                                </div>
+                                <div class="msg_area">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptatem quas alias suscipit nisi excepturi ipsa corrupti atque debitis necessitatibus aliquam quasi, molestiae culpa tempora incidunt laboriosam, unde maiores? Nobis nisi vitae quisquam voluptates deserunt neque quibusdam quod id quis dicta ipsam magni architecto magnam totam odio, placeat, iusto illum!
+                                </div>
+                            </div>
+
+
+
+                            <div class="badges_area_date">
+                                <button class="btn btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                                        </svg>  <small>09/06/23 | 8:28 AM</small>
+                                </button>
+                            </div>
+
+                            <hr>
+                            
+                            <div class="user_com">
+                                <div class="users">
+                                    <div class="avatar-group -space-x-6">
+                                        <div class="avatar">
+                                            <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?5" />
+                                            </div>
+                                        </div>
+                                        <div class="avatar">
+                                            <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?6" />
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+
+                                <div class="commens">
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                            </svg> 12
+                                    </button>
+
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                            <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                                            </svg> 1
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--====================[ END ] NOTE TAGS [ END ]====================-->
+
+
+                        <!--====================[START] NOTE TAGS [START]====================-->
+                        <div class="tags bg-base-300">
+
+                            <div class="badges_area">
+                                <div class="badges">
+                                    <div class="badge badge-neutral">Behance</div>
+                                    <div class="badge badge-secondary">Photoshop</div>
+                            </div>
+
+                                <div class="settings_tag">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                        </svg>
+                                </div>
+                            </div>
+
+
+                            <div class="msg">
+                                <div class="msg_head">
+                                    Isaac Gonzales
+                                </div>
+                                <div class="msg_area">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus assumenda voluptate aliquam!
+                                </div>
+                            </div>
+
+
+
+                            <div class="badges_area_date">
+                                <button class="btn btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                                        </svg>  <small>09/06/23 | 8:28 AM</small>
+                                </button>
+                            </div>
+
+                            <hr>
+                            
+                            <div class="user_com">
+                                <div class="users">
+                                    <div class="avatar-group -space-x-6">
+                                        <div class="avatar">
+                                            <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?7" />
+                                            </div>
+                                        </div>
+                                        <div class="avatar">
+                                            <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?8" />
+                                            </div>
+                                        </div>
+                                        <div class="avatar">
+                                            <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?9" />
+                                            </div>
+                                        </div>
+                                        <div class="avatar">
+                                            <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?10" />
+                                            </div>
+                                        </div>
+                                        </div>
+                                </div>
+
+                                <div class="commens">
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                            </svg> 5
+                                    </button>
+
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                            <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                                            </svg> 0
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--====================[ END ] NOTE TAGS [ END ]====================-->
+
+
+ 
+                    </div>
+                </div>
+
+                <div class="todo_divider">
+                    <div class="content_holder text-2xl">
+                        <div class="n">
+                            In Progress
+                        </div>
+                        <div class="light text-red-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                              </svg>
+                        </div>
+                    </div>
+                    <div class="tags_container"  id="b">
+                        <!--====================[START] NOTE TAGS [START]====================-->
+                        <div class="tags bg-base-300">
+
+                            <div class="badges_area">
+                                <div class="badges">
+                                    <div class="badge badge-neutral">Graphic Design</div>
+                                    <div class="badge badge-primary">UI</div>
+                            </div>
+
+                                <div class="settings_tag">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                      </svg>
+                                </div>
+                            </div>
+
+
+                            <div class="msg">
+                                <div class="msg_head">
+                                    Cole Norman
+                                </div>
+                                <div class="msg_area">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus assumenda voluptate aliquam!
+                                    lorem60
+                                </div>
+                            </div>
+
+
+
+                            <div class="badges_area_date">
+                                <button class="btn btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                                      </svg>  <small>09/06/23 | 8:28 AM</small>
+                                </button>
+                            </div>
+
+                            <hr>
+                            
+                            <div class="user_com">
+                                <div class="users">
+                                    <div class="avatar-group -space-x-6">
+                                        <div class="avatar">
+                                          <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?10" />
+                                          </div>
+                                        </div>
+
+                                      </div>
+                                </div>
+
+                                <div class="commens">
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                          </svg> 2
+                                    </button>
+
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                            <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                                          </svg> 1
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--====================[ END ] NOTE TAGS [ END ]====================-->
+
+                        <!--====================[START] NOTE TAGS [START]====================-->
+                        <div class="tags bg-base-300">
+
+                            <div class="badges_area">
+                                <div class="badges">
+                                    <div class="badge badge-primary">Vue.js</div>
+                            </div>
+
+                                <div class="settings_tag">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                        <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                        </svg>
+                                </div>
+                            </div>
+
+
+                            <div class="msg">
+                                <div class="msg_head">
+                                    Ina Warren
+                                </div>
+                                <div class="msg_area">
+                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus assumenda voluptate aliquam!
+                                </div>
+                            </div>
+
+
+
+                            <div class="badges_area_date">
+                                <button class="btn btn-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                                        <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                                        </svg>  <small>09/06/23 | 8:28 AM</small>
+                                </button>
+                            </div>
+
+                            <hr>
+                            
+                            <div class="user_com">
+                                <div class="users">
+                                    <div class="avatar-group -space-x-6">
+                                        <div class="avatar">
+                                            <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?12" />
+                                            </div>
+                                        </div>
+                                        <div class="avatar">
+                                            <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?13" />
+                                            </div>
+                                        </div>
+                                        <div class="avatar">
+                                            <div class="w-10">
+                                            <img src="https://source.unsplash.com/50x50/?portrait?14" />
+                                            </div>
+                                        </div>
+                                        <div class="avatar placeholder">
+                                            <div class="w-10 bg-neutral-focus text-neutral-content">
+                                              <span>+8</span>
+                                            </div>
+                                          </div>
+                                        </div>
+                                </div>
+
+                                <div class="commens">
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                            <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                            </svg> 20
+                                    </button>
+
+                                    <button class="btn btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                            <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                                            </svg> 5
+                                    </button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--====================[ END ] NOTE TAGS [ END ]====================-->
+
+                    </div>
+                </div>
+
+                <div class="todo_divider">
+                    <div class="content_holder text-2xl">
+                        <div class="n">
+                            Under Review
+                        </div>
+                        <div class="light text-yellow-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                              </svg>
+                        </div>
+                    </div>
+                    <div class="tags_container"  id="c">
+                <!--====================[START] NOTE TAGS [START]====================-->
+                <div class="tags bg-base-300">
+
+                    <div class="badges_area">
+                        <div class="badges">
+                            <div class="badge badge-neutral">Photoshop</div>
+                            <div class="badge badge-neutral">Javascript</div>
+                    </div>
+
+                        <div class="settings_tag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                            </svg>
+                        </div>
+                    </div>
+
+
+                    <div class="msg">
+                        <div class="msg_head">
+                           Louis Yates
+                        </div>
+                        <div class="msg_area">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus assumenda voluptate aliquam!
+                            lorem60
+                            <br><br>
+
+                            <img src="https://cdn.dribbble.com/userupload/4995789/file/original-79533a31b5eab51d45cb920e31211e94.jpg?resize=1024x768" alt="">
+                        </div>
+                    </div>
+
+
+
+                    <div class="badges_area_date">
+                        <button class="btn btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                                <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                            </svg>  <small>09/06/23 | 8:28 AM</small>
+                        </button>
+                    </div>
+
+                    <hr>
+                    
+                    <div class="user_com">
+                        <div class="users">
+                            <div class="avatar-group -space-x-6">
+                                <div class="avatar">
+                                <div class="w-10">
+                                    <img src="https://source.unsplash.com/50x50/?portrait?16" />
+                                </div>
+                                </div>
+                                <div class="avatar">
+                                <div class="w-10">
+                                    <img src="https://source.unsplash.com/50x50/?portrait?17" />
+                                </div>
+                                </div>
+                                <div class="avatar">
+                                    <div class="w-10">
+                                        <img src="https://source.unsplash.com/50x50/?portrait?18" />
+                                </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="commens">
+                            <button class="btn btn-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                </svg> 10
+                            </button>
+
+                            <button class="btn btn-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                                </svg> 1
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <!--====================[ END ] NOTE TAGS [ END ]====================-->
+
+                <!--====================[START] NOTE TAGS [START]====================-->
+                <div class="tags bg-base-300">
+
+                    <div class="badges_area">
+                        <div class="badges">
+                            <div class="badge badge-neutral">behance</div>
+                            <div class="badge badge-secondary">dribbble</div>
+                    </div>
+
+                        <div class="settings_tag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                </svg>
+                        </div>
+                    </div>
+
+
+                    <div class="msg">
+                        <div class="msg_head">
+                            Eugene Cruz
+                        </div>
+                        <div class="msg_area">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus assumenda voluptate aliquam!
+                        </div>
+                    </div>
+
+
+
+                    <div class="badges_area_date">
+                        <button class="btn btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                                <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                                </svg>  <small>09/06/23 | 8:28 AM</small>
+                        </button>
+                    </div>
+
+                    <hr>
+                    
+                    <div class="user_com">
+                        <div class="users">
+                            <div class="avatar-group -space-x-6">
+                                <div class="avatar">
+                                    <div class="w-10">
+                                    <img src="https://source.unsplash.com/50x50/?portrait?19" />
+                                    </div>
+                                </div>
+                                <div class="avatar">
+                                    <div class="w-10">
+                                    <img src="https://source.unsplash.com/50x50/?portrait?20" />
+                                    </div>
+                                </div>
+                                <div class="avatar">
+                                    <div class="w-10">
+                                    <img src="https://source.unsplash.com/50x50/?portrait?21" />
+                                    </div>
+                                </div>
+                                <div class="avatar placeholder">
+                                    <div class="w-10 bg-neutral-focus text-neutral-content">
+                                    <span>+13</span>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+
+                        <div class="commens">
+                            <button class="btn btn-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                    </svg> 18
+                            </button>
+
+                            <button class="btn btn-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                                    </svg> 2
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <!--====================[ END ] NOTE TAGS [ END ]====================-->
+                        
+                    </div>
+                </div>
+
+                <div class="todo_divider">
+                    <div class="content_holder  text-2xl">
+                        <div class="n">
+                            Done
+                        </div>
+                        <div class="light text-green-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3z"/>
+                              </svg>
+                        </div>
+                    </div>
+                    <div class="tags_container" id="d">
+                <!--====================[START] NOTE TAGS [START]====================-->
+                <div class="tags bg-base-300">
+
+                    <div class="badges_area">
+                        <div class="badges">
+                            <div class="badge badge-neutral">Graphic Design</div>
+                            <div class="badge badge-neutral">SQL</div>
+                            <div class="badge badge-primary">Website</div>
+                    </div>
+
+                        <div class="settings_tag">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+                                <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                </svg>
+                        </div>
+                    </div>
+
+
+                    <div class="msg">
+                        <div class="msg_head">
+                            Randy Mitchell
+                        </div>
+                        <div class="msg_area">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus assumenda voluptate aliquam!
+                        </div>
+                    </div>
+
+
+
+                    <div class="badges_area_date">
+                        <button class="btn btn-sm">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2" viewBox="0 0 16 16">
+                                <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H2z"/>
+                                <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5V4z"/>
+                                </svg>  <small>09/06/23 | 8:28 AM</small>
+                        </button>
+                    </div>
+
+                    <hr>
+                    
+                    <div class="user_com">
+                        <div class="users">
+                            <div class="avatar-group -space-x-6">
+                                <div class="avatar">
+                                    <div class="w-10">
+                                    <img src="https://source.unsplash.com/50x50/?portrait?19" />
+                                    </div>
+                                </div>
+                                <div class="avatar">
+                                    <div class="w-10">
+                                    <img src="https://source.unsplash.com/50x50/?portrait?24" />
+                                    </div>
+                                </div>
+                                <div class="avatar">
+                                    <div class="w-10">
+                                    <img src="https://source.unsplash.com/50x50/?portrait?23" />
+                                    </div>
+                                </div>
+                                <div class="avatar placeholder">
+                                    <div class="w-10 bg-neutral-focus text-neutral-content">
+                                    <span>+13</span>
+                                    </div>
+                                </div>
+                                </div>
+                        </div>
+
+                        <div class="commens">
+                            <button class="btn btn-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-chat-dots-fill" viewBox="0 0 16 16">
+                                    <path d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+                                    </svg> 15
+                            </button>
+
+                            <button class="btn btn-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+                                    <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                                    </svg> 2
+                            </button>
+                        </div>
+
+                    </div>
+                </div>
+                <!--====================[ END ] NOTE TAGS [ END ]====================-->
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+</div>
+
+</body>
+</html>
+
+
+<script>
+
+const scrollContainer = document.getElementById("scroll-container");
+let isDragging = false;
+let startPositionX = 0;
+
+scrollContainer.addEventListener("mousedown", (e) => {
+   isDragging = true;
+   startPositionX = e.clientX - scrollContainer.scrollLeft;
+   scrollContainer.style.cursor = "grabbing"; // Change cursor to indicate grabbing
+});
+
+document.addEventListener("mousemove", (e) => {
+   if (!isDragging) return;
+   const scrollX = e.clientX - startPositionX;
+   scrollContainer.scrollLeft = scrollX;
+});
+
+document.addEventListener("mouseup", () => {
+   isDragging = false;
+   scrollContainer.style.cursor = "grab"; // Change cursor back to grabbing hand
+});
+
+
+
+
+
+
+setInterval(() => {
+    var w = window.innerWidth;
+    if (w <= 906) {
+        window.location.href = "main.html";
+
+    }else{
+        
+    }
+}, 500);
+
+
+
+
+</script>
