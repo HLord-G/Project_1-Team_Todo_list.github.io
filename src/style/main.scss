@@ -501,5 +501,24 @@
 
 
 @media(max-width:846px){
-    
+    body{
+        .todo_list{
+            transition: .2s;
+            opacity:0;
+        }
+
+        &::before{
+            content: "This Project is not available on your device";
+            clear: both;
+            height:100vh;
+            width:100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: x-large;
+            padding:20px;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+    }
 }

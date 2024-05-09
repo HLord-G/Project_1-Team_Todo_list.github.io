@@ -354,4 +354,24 @@
 }
 .todo_list .content_view .content .todo_list_display .todo_divider .tags_container .tags .user_com .commens .btn {
   margin-left: 5px;
+}
+
+@media (max-width: 846px) {
+  body .todo_list {
+    transition: 0.2s;
+    opacity: 0;
+  }
+  body::before {
+    content: "This Project is not available on your device";
+    clear: both;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    padding: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
 }/*# sourceMappingURL=main.css.map */
