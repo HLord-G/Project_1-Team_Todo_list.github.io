@@ -315,61 +315,61 @@
 
 
 
-@media(max-width:630px){
-    .pro_b{
-        .pro{
-            flex-flow: column-reverse;
-            height:80%;
+// @media(max-width:630px){
+//     .pro_b{
+//         .pro{
+//             flex-flow: column-reverse;
+//             height:80%;
 
-            .profile{
-                position: absolute;
-                top:55%; left:125%;
-                transform: translate(-50%,-50%);
-                display: none;
+//             .profile{
+//                 position: absolute;
+//                 top:55%; left:125%;
+//                 transform: translate(-50%,-50%);
+//                 display: none;
          
 
-                .harold{
-                    scale:.9;
-                    position: absolute;
-                    top:-20%;
-                    right: -50%;
-                    z-index: 100;
+//                 .harold{
+//                     scale:.9;
+//                     position: absolute;
+//                     top:-20%;
+//                     right: -50%;
+//                     z-index: 100;
 
 
-                }
-            }
+//                 }
+//             }
 
-            .cotents{
-                .rold{
-                    display: block;
-                }
-                .glastoc{
-                    display: block;
-                }
-                .nameandtitle{
-                top:85%; left:42%;
-                    z-index:9999;
+//             .cotents{
+//                 .rold{
+//                     display: block;
+//                 }
+//                 .glastoc{
+//                     display: block;
+//                 }
+//                 .nameandtitle{
+//                 top:85%; left:42%;
+//                     z-index:9999;
 
-                    h1{
-                        font-size:28px;
-                        // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                        font-family: 'Stoner_Demo';
-                    }
-                }
+//                     h1{
+//                         font-size:28px;
+//                         // font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+//                         font-family: 'Stoner_Demo';
+//                     }
+//                 }
 
 
 
-                .projecs{
-                    display: none;
-                }
-                .projects{
-                    display: none;
-                }
-            }
+//                 .projecs{
+//                     display: none;
+//                 }
+//                 .projects{
+//                     display: none;
+//                 }
+//             }
 
-        }
-    }
-}
+//         }
+//     }
+// }
 
 
 

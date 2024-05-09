@@ -246,8 +246,7 @@
   width: 100%;
   overflow: auto;
   -webkit-user-select: none; /* Safari */
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* Internet Explorer/Edge */
+  -moz-user-select: none; /* Firefox */ /* Internet Explorer/Edge */
   user-select: none; /* Standard syntax */
   /* width */
   /* Track */
